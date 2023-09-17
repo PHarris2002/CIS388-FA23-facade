@@ -32,7 +32,7 @@
                 <Label Grid.Column="1"
                        Text="FACADE"
                        FontSize="60"
-                       FontFamily="CuteLetters"
+                       FontFamily="Lobster"
                        VerticalOptions="Center"
                        HorizontalOptions="Center"
                        />
