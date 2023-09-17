@@ -14,44 +14,41 @@
             HorizontalOptions="Center" />
         </VerticalStackLayout>-->
         <Grid>
-            <Grid Padding="12" Grid.Row="1" RowSpacing="12" ColumnSpacing="12">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="0.20*"/>
-            </Grid.RowDefinitions>
-
-                <Label  Grid.Row="0"
+            <Grid ColumnDefinitions="*,*" RowDefinitions="0.20*, *, *, 0.20*" Padding="12" Grid.Row="1" RowSpacing="12" ColumnSpacing="12" BackgroundColor="#fafaff">
+                <Button Grid.Row="1"
                     Grid.ColumnSpan="2"
                     x:Name="ResultLabel"
                     Text="{Binding Result}"
+                    HeightRequest="250"
                     BackgroundColor="#facade"
                     Padding="50"
-                    FontAttributes="Bold"
-                    FontSize="60"
+                    FontFamily="CuteLetters"
+                    FontSize="40"
+                    CharacterSpacing="2"
                     VerticalOptions="Center" 
-                    HorizontalOptions="Center" />
+                    HorizontalOptions="Center"
+                    CornerRadius="20"
+                    IsEnabled="False"/>
 
-                <Button Grid.Row="1"
+                <Button Grid.Row="2"
                    Grid.Column="0"
                    Text="Home"
+                   HeightRequest="90"
                    TextColor="#fff"
                    BackgroundColor="#111"
-                   BorderWidth="1"
                    FontSize="30"
+                   FontFamily="CuteLetters"
                    IsEnabled="false "/>
-            <Button Grid.Row="1"
+                
+            <Button Grid.Row="2"
                    Grid.Column="1"
                    Text="Try Again"
+                   HeightRequest="90"
                    TextColor="#fff"
                    BackgroundColor="#111"
-                   BorderWidth="1"
                    FontSize="30"
-                   IsEnabled="false "/>
+                   FontFamily="CuteLetters"
+                   IsEnabled="true "/>
         </Grid>
         </Grid>
     </ScrollView>
