@@ -1,4 +1,6 @@
-﻿namespace facade;
+﻿using System.Security.Cryptography;
+
+namespace facade;
 
 [QueryProperty("DidWin", "DidWin")]
 public partial class GameOverPage : ContentPage
@@ -9,7 +11,10 @@ public partial class GameOverPage : ContentPage
 		get => didWin;
 		set
 		{
-			didWin = value;
+			var random = new Random();
+			int randomNumber = random.Next(1, 3);
+
+			didWin = randomNumber == 1;
 			if(didWin)
 			{
 				ResultLabel.Text = "You Won!";
@@ -20,16 +25,6 @@ public partial class GameOverPage : ContentPage
 			}
 		}
 	}
-
-	//private string result;
-	//public string Result {
-	//	get => result;
-	//	set
-	//	{
-	//		result = value;
-	//           ResultLabel.Text = "You " + result;
-	//       }
-	//}
 
 	public GameOverPage()
 	{
