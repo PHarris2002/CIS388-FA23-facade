@@ -77,23 +77,8 @@
 
             </Grid>
 
-            <Grid RowDefinitions="*,*,*" ColumnDefinitions="*,*,*,*,*,*,*,*" Padding="12" Grid.Row="2" RowSpacing="12" ColumnSpacing="12">
-
+            <Grid RowDefinitions="*,*" ColumnDefinitions="*,*,*,*,*,*,*,*" Padding="12" Grid.Row="2" RowSpacing="12" ColumnSpacing="12">
                 <Button Grid.Row="0"
-                    Grid.ColumnSpan="8"
-                    LineBreakMode="WordWrap"
-                    Text="Tap the buttons to switch letters (A-F), then press &quot;OK&quot; to submit your guess."
-                    WidthRequest="360"
-                    HeightRequest="100"
-                    BackgroundColor="#fff"
-                    TextColor="#111"
-                    FontSize="16"
-                    FontAttributes="Bold"
-                    CharacterSpacing="1"
-                    Padding="10, 0"
-                />
-
-                <Button Grid.Row="1"
                     Grid.Column="0"
                     Text="#"
                     WidthRequest="50"
@@ -104,7 +89,7 @@
                     Padding="0, 0, 0, 0"
                 />
 
-                <Button Grid.Row="1"
+                <Button Grid.Row="0"
                     Grid.Column="1"
                     Text="A"
                     WidthRequest="40"
@@ -117,9 +102,9 @@
                     FontFamily="CuteLetters"
                     Padding="0, 0, 0, 2"
                 />
-                <Button Grid.Row="1"
+                <Button Grid.Row="0"
                     Grid.Column="2"
-                    Text="A"
+                    Text="B"
                     WidthRequest="40"
                     HeightRequest="40"
                     BackgroundColor="#facade"
@@ -131,9 +116,9 @@
                     Padding="0, 0, 0, 2"
                 />
                 
-                <Button Grid.Row="1"
+                <Button Grid.Row="0"
                     Grid.Column="3"
-                    Text="A"
+                    Text="C"
                     WidthRequest="40"
                     HeightRequest="40"
                     BackgroundColor="#facade"
@@ -145,9 +130,9 @@
                     Padding="0, 0, 0, 2"
                 />
                 
-                <Button Grid.Row="1"
+                <Button Grid.Row="0"
                     Grid.Column="4"
-                    Text="A"
+                    Text="D"
                     WidthRequest="40"
                     HeightRequest="40"
                     BackgroundColor="#facade"
@@ -158,9 +143,22 @@
                     FontFamily="CuteLetters"
                     Padding="0, 0, 0, 2"
                 />
-                <Button Grid.Row="1"
+                <Button Grid.Row="0"
                     Grid.Column="5"
-                    Text="A"
+                    Text="E"
+                    WidthRequest="40"
+                    HeightRequest="40"
+                    BackgroundColor="#facade"
+                    TextColor="#000"
+                    BorderColor="White"
+                    BorderWidth="2"
+                    FontSize="30"
+                    FontFamily="CuteLetters"
+                    Padding="0, 0, 0, 2"
+                />
+                <Button Grid.Row="0"
+                    Grid.Column="6"
+                    Text="F"
                     WidthRequest="40"
                     HeightRequest="40"
                     BackgroundColor="#facade"
@@ -172,21 +170,8 @@
                     Padding="0, 0, 0, 2"
                 />
                 <Button Grid.Row="1"
-                    Grid.Column="6"
-                    Text="A"
-                    WidthRequest="40"
-                    HeightRequest="40"
-                    BackgroundColor="#facade"
-                    TextColor="#000"
-                    BorderColor="White"
-                    BorderWidth="2"
-                    FontSize="30"
-                    FontFamily="CuteLetters"
-                    Padding="0, 0, 0, 2"
-                />
-                <Button Grid.Row="2"
                     Grid.ColumnSpan="5"
-                    Text="OK"
+                    Text="SUBMIT"
                     WidthRequest="200"
                     HeightRequest="60"
                     CornerRadius="30"
@@ -198,10 +183,10 @@
                     Padding="0, 0, 0, 2"
                 >
                 </Button>
-                <Button Grid.Row="2"
+                <Button Grid.Row="1"
                     Grid.Column="5"
                     Grid.ColumnSpan="2"
-                    Text="RESET"
+                    Text="DELETE"
                     WidthRequest="120"
                     HeightRequest="60"
                     CornerRadius="30"
