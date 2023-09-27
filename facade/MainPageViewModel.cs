@@ -20,13 +20,11 @@ namespace facade
 
         public MainPageViewModel()
         {
-            secretColor = "FACADE";
+
+            secretColor = "facade";
             currentGuess = "";
 
             Guesses = new ObservableCollection<ColorGuess>();
-
-            Guesses.Add(new ColorGuess("#beaded"));
-            Guesses.Add(new ColorGuess("#efaced"));
 
         }
 
@@ -62,7 +60,7 @@ namespace facade
             }
 
             // else if this is the 6th guess (and it's wrong)
-            else
+            else if (Guesses.Count == 6 && CurrentGuess != secretColor)
             {
                 Shell.Current.GoToAsync($"{nameof(GameOverPage)}?DidWin=false");
             }
@@ -70,8 +68,11 @@ namespace facade
 
 
             // Add this guess to the Guesses
-            Guesses.Add(new ColorGuess(CurrentGuess));
-
+            if (CurrentGuess.Length == 6)
+            {
+                Guesses.Add(new ColorGuess("#" + CurrentGuess));
+                CurrentGuess = "";
+            }
         }
 
 
