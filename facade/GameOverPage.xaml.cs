@@ -11,11 +11,7 @@ public partial class GameOverPage : ContentPage
 		get => didWin;
 		set
 		{
-			var random = new Random();
-			int randomNumber = random.Next(1, 3);
-
-			didWin = randomNumber == 1; 
-			if(didWin)
+			if(didWin = value)
 			{
 				ResultLabel.Text = "You Won!";
 			}

@@ -56,8 +56,16 @@ namespace facade
         void Guess()
         {
             // if correct, then go to game over (DidWin=true)
+            if (CurrentGuess == secretColor)
+            {
+                Shell.Current.GoToAsync($"{nameof(GameOverPage)}?DidWin=true");
+            }
 
             // else if this is the 6th guess (and it's wrong)
+            else
+            {
+                Shell.Current.GoToAsync($"{nameof(GameOverPage)}?DidWin=false");
+            }
             // then go to game over (DidWin=false)
 
 
