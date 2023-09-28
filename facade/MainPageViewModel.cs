@@ -14,18 +14,31 @@ namespace facade
         [ObservableProperty]
         private string currentGuess;
 
-        public ObservableCollection<ColorGuess> Guesses { get; set; }
+        [ObservableProperty]
+        private Color secretColorBackground;
 
-        //public string SecretColor { get; set; }
+        public ObservableCollection<ColorGuess> Guesses { get; set; }
 
         public MainPageViewModel()
         {
+            //generates random hex color code
+            string chars = "abcdef";
+            secretColor = "";
 
-            secretColor = "facade";
+            Random rand = new Random();
+
+            for (int i = 0; i < 6; i++)
+            {
+                secretColor += chars[rand.Next(0, 6)];
+            }
+
+            //creates base user input
             currentGuess = "";
 
             Guesses = new ObservableCollection<ColorGuess>();
 
+            //Creates background UI for secret-color part
+            secretColorBackground = Color.FromArgb("#" + secretColor);
         }
 
 
@@ -68,10 +81,13 @@ namespace facade
 
 
             // Add this guess to the Guesses
-            if (CurrentGuess.Length == 6)
+            else
             {
-                Guesses.Add(new ColorGuess("#" + CurrentGuess));
-                CurrentGuess = "";
+                if (CurrentGuess.Length == 6)
+                {
+                    Guesses.Add(new ColorGuess("#" + CurrentGuess));
+                    CurrentGuess = "";
+                }
             }
         }
 

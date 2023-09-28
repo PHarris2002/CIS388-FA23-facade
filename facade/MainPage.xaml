@@ -75,7 +75,7 @@
                             IsEnabled="false "/>
                         </Grid>-->
 
-            <Grid RowDefinitions="*" ColumnDefinitions="0.10*, 0.90*" Margin="10" Padding="10" Grid.Row="1" RowSpacing="12" ColumnSpacing="12" BackgroundColor="#facade">
+            <Grid RowDefinitions="*" ColumnDefinitions="0.10*, 0.90*" Margin="10" Padding="10" Grid.Row="1" RowSpacing="12" ColumnSpacing="12" Background="{Binding SecretColorBackground}">
 
                 <Label Grid.Column="0"
                        Text="#"
