@@ -9,7 +9,7 @@ namespace facade
     public partial class MainPageViewModel : ObservableObject
     {
         [ObservableProperty]
-        private string secretColor;
+        public string secretColor;
 
         [ObservableProperty]
         private string currentGuess;
@@ -73,12 +73,11 @@ namespace facade
             }
 
             // else if this is the 6th guess (and it's wrong)
-            else if (Guesses.Count == 6 && CurrentGuess != secretColor)
+            else if (Guesses.Count == 6 && CurrentGuess != secretColor && CurrentGuess.Length == 6)
             {
+                // then go to game over (DidWin=false)
                 Shell.Current.GoToAsync($"{nameof(GameOverPage)}?DidWin=false");
             }
-            // then go to game over (DidWin=false)
-
 
             // Add this guess to the Guesses
             else
@@ -88,6 +87,12 @@ namespace facade
                     Guesses.Add(new ColorGuess("#" + CurrentGuess));
                     CurrentGuess = "";
                 }
+            }
+
+            //Clear any guess that has a CurrentGuess.Length < 6
+            if (CurrentGuess.Length < 6)
+            {
+                CurrentGuess = "";
             }
         }
 

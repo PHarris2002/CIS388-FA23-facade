@@ -17,7 +17,7 @@ public partial class GameOverPage : ContentPage
 			}
 			else
 			{
-				ResultLabel.Text = "You Lost!";
+				ResultLabel.Text = "You Lost! The hex code was";
 			}
 		}
 	}

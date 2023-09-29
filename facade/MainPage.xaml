@@ -8,7 +8,7 @@
              x:DataType="local:MainPageViewModel"
              >
 
-    <ScrollView BackgroundColor="#aacade">
+    <ScrollView BackgroundColor="AliceBlue">
         <Grid RowDefinitions="auto,*,auto" RowSpacing="16">
             <CollectionView HeightRequest="125"
                             ItemsSource="{Binding Guesses}"
