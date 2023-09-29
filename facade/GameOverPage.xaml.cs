@@ -5,6 +5,8 @@ namespace facade;
 [QueryProperty("DidWin", "DidWin")]
 public partial class GameOverPage : ContentPage
 {
+    MainPageViewModel mainPage = new MainPageViewModel();
+
 	private bool didWin;
 	public bool DidWin
 	{
@@ -17,13 +19,15 @@ public partial class GameOverPage : ContentPage
 			}
 			else
 			{
-				ResultLabel.Text = "You Lost! The hex code was";
+				ResultLabel.Text = $"You Lost!\n\nThe hex code was #{mainPage.secretColor}!";
 			}
 		}
 	}
 
+
 	public GameOverPage()
 	{
 		InitializeComponent();
+
     }
 }

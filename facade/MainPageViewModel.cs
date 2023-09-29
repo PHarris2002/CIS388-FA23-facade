@@ -41,7 +41,6 @@ namespace facade
             secretColorBackground = Color.FromArgb("#" + secretColor);
         }
 
-
         [RelayCommand]
         void AddLetter(string letter)
         {
