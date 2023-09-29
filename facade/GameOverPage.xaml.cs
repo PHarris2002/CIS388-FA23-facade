@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography;
+﻿using System.Collections.ObjectModel;
+using System.Security.Cryptography;
 
 namespace facade;
 
@@ -29,5 +30,10 @@ public partial class GameOverPage : ContentPage
 	{
 		InitializeComponent();
 
+    }
+
+    async void Button_Clicked(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("..");
     }
 }

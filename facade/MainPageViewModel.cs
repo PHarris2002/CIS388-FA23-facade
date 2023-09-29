@@ -12,27 +12,36 @@ namespace facade
         public string secretColor;
 
         [ObservableProperty]
-        private string currentGuess;
+        public string currentGuess;
 
         [ObservableProperty]
-        private Color secretColorBackground;
+        public Color secretColorBackground;
 
         public ObservableCollection<ColorGuess> Guesses { get; set; }
 
-        public MainPageViewModel()
+        public string SecretColorGenerator()
         {
             //generates random hex color code
+            //this specific method is also for restarting the game after clicking "Try Again" on the game over page
             string chars = "abcdef";
-            secretColor = "";
+            string color = "";
 
             Random rand = new Random();
 
             for (int i = 0; i < 6; i++)
             {
-                secretColor += chars[rand.Next(0, 6)];
+                color += chars[rand.Next(0, 6)];
             }
 
-            //creates base user input
+            return color;
+        }
+
+        public MainPageViewModel()
+        {
+            //sets up the secret color
+            secretColor = SecretColorGenerator();
+
+            //creates base input
             currentGuess = "";
 
             Guesses = new ObservableCollection<ColorGuess>();
@@ -40,6 +49,7 @@ namespace facade
             //Creates background UI for secret-color part
             secretColorBackground = Color.FromArgb("#" + secretColor);
         }
+
 
         [RelayCommand]
         void AddLetter(string letter)
@@ -69,6 +79,10 @@ namespace facade
             if (CurrentGuess == secretColor)
             {
                 Shell.Current.GoToAsync($"{nameof(GameOverPage)}?DidWin=true");
+
+                //Clear guesses for restart
+                Guesses.Clear();
+                CurrentGuess = "";
             }
 
             // else if this is the 6th guess (and it's wrong)
@@ -76,6 +90,9 @@ namespace facade
             {
                 // then go to game over (DidWin=false)
                 Shell.Current.GoToAsync($"{nameof(GameOverPage)}?DidWin=false");
+
+                Guesses.Clear();
+                CurrentGuess = "";
             }
 
             // Add this guess to the Guesses
@@ -94,7 +111,6 @@ namespace facade
                 CurrentGuess = "";
             }
         }
-
 
     }
 }
