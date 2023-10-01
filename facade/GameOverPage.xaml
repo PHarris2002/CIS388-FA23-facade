@@ -8,13 +8,20 @@
     <ScrollView>
         <Grid>
             <Grid ColumnDefinitions="*,*" RowDefinitions="0.20*, *, *, 0.20*" Padding="12" Grid.Row="1" RowSpacing="12" ColumnSpacing="12" BackgroundColor="#fafaff">
+                <Image
+                    Grid.RowSpan="4"
+                    Grid.ColumnSpan="2"
+                    Aspect="Center"
+                    Source="facade_bg2.png"/>
+                
                 <Button Grid.Row="1"
                     Grid.ColumnSpan="2"
                     x:Name="ResultLabel"
                     Text="{Binding Result}"
+                    WidthRequest="350"
                     HeightRequest="250"
-                    BackgroundColor="#facade"
-                    Padding="0"
+                    BackgroundColor="#ffffff"
+                    Padding="10"
                     FontFamily="CuteLetters"
                     FontSize="40"
                     LineBreakMode="WordWrap"
@@ -32,7 +39,8 @@
                    BackgroundColor="#111"
                    FontSize="30"
                    FontFamily="CuteLetters"
-                   IsEnabled="false "/>
+                   IsEnabled="true "
+                   Clicked="Button_Clicked_Home"/>
                 
             <Button Grid.Row="2"
                    Grid.Column="1"
@@ -43,7 +51,7 @@
                    FontSize="30"
                    FontFamily="CuteLetters"
                    IsEnabled="true "
-                   Clicked="Button_Clicked"/>
+                   Clicked="Button_Clicked_TryAgain"/>
                 
         </Grid>
         </Grid>

@@ -8,8 +8,38 @@
 
     <ShellContent
         Title="Home"
+        ContentTemplate="{DataTemplate local:HomePage}"
+        Route="HomePage" />
+    
+    <ShellContent
+        Title="MainGame"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
+
+    <ShellContent
+        Title="TutorialPage1"
+        ContentTemplate="{DataTemplate local:TutorialPage1}"
+        Route="TutorialPage1" />
+
+    <ShellContent
+        Title="TutorialPage2"
+        ContentTemplate="{DataTemplate local:TutorialPage2}"
+        Route="TutorialPage2" />
+
+    <ShellContent
+        Title="TutorialPage3"
+        ContentTemplate="{DataTemplate local:TutorialPage3}"
+        Route="TutorialPage3" />
+
+    <ShellContent
+        Title="TutorialPage4"
+        ContentTemplate="{DataTemplate local:TutorialPage4}"
+        Route="TutorialPage4" />
+
+    <ShellContent
+        Title="GameOver"
+        ContentTemplate="{DataTemplate local:GameOverPage}"
+        Route="GameOverPage" />
 
 </Shell>
 

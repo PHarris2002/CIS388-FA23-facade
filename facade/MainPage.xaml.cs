@@ -13,4 +13,5 @@ public partial class MainPage : ContentPage
         BindingContext = new MainPageViewModel();
 
     }
+
 }

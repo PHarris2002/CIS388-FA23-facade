@@ -20,7 +20,7 @@ public partial class GameOverPage : ContentPage
 			}
 			else
 			{
-				ResultLabel.Text = $"You Lost!\n\nThe hex code was #{mainPage.secretColor}!";
+				ResultLabel.Text = $"You Lost!\n\nThe hex code was \"#{mainPage.secretColor}\"!";
 			}
 		}
 	}
@@ -32,8 +32,13 @@ public partial class GameOverPage : ContentPage
 
     }
 
-    async void Button_Clicked(object sender, EventArgs e)
+    async void Button_Clicked_TryAgain(object sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync("..");
+        await Shell.Current.GoToAsync($"//{nameof(HomePage)}/{nameof(MainPage)}");
+    }
+
+    async void Button_Clicked_Home(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("../../");
     }
 }

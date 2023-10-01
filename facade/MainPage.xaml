@@ -10,7 +10,9 @@
 
     <ScrollView BackgroundColor="CadetBlue">
         <Grid RowDefinitions="auto,*,auto" RowSpacing="16">
-            <CollectionView HeightRequest="125"
+
+            <CollectionView Grid.Row="0"
+                            HeightRequest="125"
                             ItemsSource="{Binding Guesses}"
                             ItemsLayout="VerticalGrid, 3">
                 <CollectionView.ItemTemplate>
@@ -27,53 +29,7 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-                <!--<Grid RowDefinitions="*, *" ColumnDefinitions="*,*,*" VerticalOptions="Center" Padding="10, 30, 10, 10" Grid.Row="0" RowSpacing="12" ColumnSpacing="12">
-                        <Button Grid.Row="0"
-                            Grid.Column="0"
-                            Text="#beaded"
-                            BackgroundColor="#beaded"
-                            FontSize="16"
-                            FontAttributes="Bold"
-                            CharacterSpacing="2"
-                            IsEnabled="false "/>
-                        <Button Grid.Row="0"
-                            Grid.Column="1"
-                            Text="#fadedd"
-                            BackgroundColor="#fadedd"
-                            FontSize="16"
-                            FontAttributes="Bold"
-                            CharacterSpacing="2"
-                            IsEnabled="false "/>
-                        <Button Grid.Row="0"
-                            Grid.Column="2"
-                            Text="#beefed"
-                            BackgroundColor="#beefed"
-                            FontSize="16"
-                            FontAttributes="Bold"
-                            CharacterSpacing="2"
-                            IsEnabled="false "/>
 
-                        <Button Grid.Row="1"
-                            Grid.Column="0"
-                            Text=""
-                            BackgroundColor="#eee"
-                            FontSize="16"
-                            IsEnabled="false "/>
-                
-                        <Button Grid.Row="1"
-                            Grid.Column="1"
-                            Text=""
-                            BackgroundColor="#eee"
-                            FontSize="16"
-                            IsEnabled="false "/>
-
-                            <Button Grid.Row="1"
-                            Grid.Column="2"
-                            Text=""
-                            BackgroundColor="#eee"
-                            FontSize="16"
-                            IsEnabled="false "/>
-                        </Grid>-->
 
             <Grid RowDefinitions="*" ColumnDefinitions="0.10*, 0.90*" Margin="10" Padding="10" Grid.Row="1" RowSpacing="12" ColumnSpacing="12" Background="{Binding SecretColorBackground}">
 

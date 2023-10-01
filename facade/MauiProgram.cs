@@ -17,8 +17,17 @@ public static class MauiProgram
                 fonts.AddFont("Lobster-Regular.ttf", "Lobster");
             });
 
+        builder.Services.AddSingleton<HomePage>();
 
-		builder.Services.AddTransient<GameOverPage>();
+        builder.Services.AddTransient<MainPage>();
+        builder.Services.AddTransient<MainPageViewModel>();
+
+        builder.Services.AddTransient<TutorialPage1>();
+        builder.Services.AddTransient<TutorialPage2>();
+        builder.Services.AddTransient<TutorialPage3>();
+        builder.Services.AddTransient<TutorialPage4>();
+
+        builder.Services.AddTransient<GameOverPage>();
 
 #if DEBUG
 		builder.Logging.AddDebug();
