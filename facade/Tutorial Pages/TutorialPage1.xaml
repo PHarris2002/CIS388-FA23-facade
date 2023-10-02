@@ -39,6 +39,7 @@
             WidthRequest="100"
             FontSize="30"
             Text="▶"
+            Background="#44aaaa"
             VerticalOptions="Center"
             Clicked="Next"/>
     </Grid>

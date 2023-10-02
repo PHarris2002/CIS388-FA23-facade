@@ -29,6 +29,7 @@
             WidthRequest="100"
             FontSize="30"
             Text="◀"
+            Background="#44aaaa"
             VerticalOptions="Center"
             Clicked="Prev"/>
 
@@ -47,6 +48,7 @@
             Grid.Row="2"
             WidthRequest="100"
             FontSize="20"
+            Background="#44aaaa"
             Text="Home"
             Padding="0,17"
             VerticalOptions="Center"
