@@ -79,10 +79,6 @@ namespace facade
             if (CurrentGuess == secretColor)
             {
                 Shell.Current.GoToAsync($"{nameof(GameOverPage)}?DidWin=true");
-
-                //Clear guesses for restart
-                Guesses.Clear();
-                CurrentGuess = "";
             }
 
             // else if this is the 6th guess (and it's wrong)
@@ -90,9 +86,6 @@ namespace facade
             {
                 // then go to game over (DidWin=false)
                 Shell.Current.GoToAsync($"{nameof(GameOverPage)}?DidWin=false");
-
-                Guesses.Clear();
-                CurrentGuess = "";
             }
 
             // Add this guess to the Guesses

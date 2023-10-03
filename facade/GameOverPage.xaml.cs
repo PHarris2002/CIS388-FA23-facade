@@ -34,6 +34,7 @@ public partial class GameOverPage : ContentPage
 
     async void Button_Clicked_TryAgain(object sender, EventArgs e)
     {
+        await Shell.Current.GoToAsync($"//{nameof(HomePage)}");
         await Shell.Current.GoToAsync($"//{nameof(HomePage)}/{nameof(MainPage)}");
     }
 
